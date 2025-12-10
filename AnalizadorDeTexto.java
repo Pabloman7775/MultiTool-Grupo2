@@ -7,11 +7,13 @@ public class AnalizadorDeTexto {
 
         //iniciarAplicacion();
 
-        String texto = "";
+        String texto = "Mi bombo clat";
 
-        System.out.println(contarPalabras(texto));
+        palabraMasLarga(texto);
         
     }
+
+
 
     static void iniciarAplicacion() {
         int eleccion;
@@ -45,6 +47,8 @@ public class AnalizadorDeTexto {
         } while (eleccion != 0);
     }
 
+
+
     static int mostrarMenuYLeerOpcion() {
 
         System.out.println("\n=== ANALIZADOR DE TEXTO ===");
@@ -60,19 +64,26 @@ public class AnalizadorDeTexto {
     }      
 
 
-    public static void contarVocalesUI(){
+
+    public static void contarVocalesUI() {
 
     }
 
-    public static void contarPalabrasUI(){
+
+
+    public static void contarPalabrasUI() {
         
     }
 
-    public static void palabraMasLargaUI(){
+
+
+    public static void palabraMasLargaUI() {
         
     }
 
-    public static int contarVocales(String texto){
+
+
+    public static int contarVocales(String texto) {
 
         texto = texto.toLowerCase();
         int contadorVocales = 0;
@@ -85,6 +96,8 @@ public class AnalizadorDeTexto {
 
         return contadorVocales;
     }
+
+
 
     public static int contarPalabras(String texto) {
 
@@ -110,10 +123,29 @@ public class AnalizadorDeTexto {
         return conteoPalabras;
     }
 
-    public static void palabraMasLarga(){
-        
-    }
 
+
+    public static String palabraMasLarga(String texto) {
+
+        if (texto == null || texto.length() == 0) {
+            return "";
+        }  
+
+        String palabraActual = "";
+        String palabraMasLarga = "";
+
+        for (int i = 0; i < texto.length(); i++) {
+            char caracterActual = texto.charAt(i);
+
+            if (caracterActual != ' ') {
+                palabraActual += caracterActual;
+            } else if (palabraActual.length() > palabraMasLarga.length()) {
+                palabraMasLarga = palabraActual;
+            }
+        }
+    
+    
+    }
 
 
 
