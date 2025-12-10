@@ -6,6 +6,10 @@ public class AnalizadorDeTexto {
     public static void main(String[] args) {
 
         //iniciarAplicacion();
+
+        String texto = "";
+
+        System.out.println(contarPalabras(texto));
         
     }
 
@@ -82,13 +86,36 @@ public class AnalizadorDeTexto {
         return contadorVocales;
     }
 
-    public static void contarPalabras(){
-        
+    public static int contarPalabras(String texto) {
+
+        if (texto == null || texto.length() == 0) {
+            return 0;
+        }
+
+        int conteoPalabras = 0;
+
+        boolean dentroPalabra = false;
+
+        for (int i = 0; i < texto.length(); i++) {
+            char caracterActual = texto.charAt(i);
+
+            if (caracterActual != ' ' && !dentroPalabra) {
+                conteoPalabras++;
+                dentroPalabra = true;
+            } else if (caracterActual == ' ') {
+                dentroPalabra = false;
+            }
+        }
+
+        return conteoPalabras;
     }
 
     public static void palabraMasLarga(){
         
     }
+
+
+
 
 
 
