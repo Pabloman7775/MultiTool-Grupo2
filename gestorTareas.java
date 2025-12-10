@@ -6,8 +6,6 @@ public class gestorTareas {
     static Scanner leer = new Scanner(System.in);
     static int contador = 0;
     public static void main(String[] args) {
-        System.out.println();
-        System.out.println("=== GESTOR DE TAREAS ===");
         int opcion = 0;
         do {
         opcion = opcionMenu();
@@ -24,6 +22,8 @@ public class gestorTareas {
 
     static int opcionMenu() {
         int opcion = 0;
+        System.out.println();
+        System.out.println("=== GESTOR DE TAREAS ===");
         System.out.println("OPCIONES:");
         System.out.println("  1. Añadir Tarea");
         System.out.println("  2. Listar Tareas");
@@ -39,10 +39,13 @@ public class gestorTareas {
         switch (opcion) {
             case 1:
                 añadirTarea();
+                break;
             case 2:
                 listarTareas();
+                break;
             case 3:
                 pedirPalabra();
+                break;
             case 0:
                 break;
             default:
@@ -54,14 +57,27 @@ public class gestorTareas {
     }
     
     static void añadirTarea() {
+        boolean existe = false;
         System.out.println();
         System.out.println("=== AÑADIR TAREA ===");
-        String tarea;
         System.out.print("Introduce Tarea: ");
-        tarea = leer.next();
-        tareas[contador] = tarea;
-        contador++;
-        main(tareas);
+        String tarea = leer.next();
+        for (int i = 0; i < contador; i++) {
+            if (tarea.equals(tareas[i])) {
+                System.out.println();
+                System.out.println("Esta tarea ya existe en la posición " + i);
+                System.out.println();
+                existe = true;
+            }
+        }
+        if (existe == false) {
+            tareas[contador] = tarea;
+            contador++;
+            System.out.println("Tarea correctamente creada");
+        } {
+            
+        }
+        
     }
 
     static void listarTareas() {
@@ -76,7 +92,6 @@ public class gestorTareas {
         }
         }
         System.out.println();
-        main(tareas);
     }
 
     static void pedirPalabra() {
@@ -104,7 +119,6 @@ public class gestorTareas {
         else {
             System.out.println("Se han encontrado " + encontradas + " palabras relacionadas a '" + palabra + "'");
         }
-        main(tareas);
+        opcionMenu();
     }
 }
-
