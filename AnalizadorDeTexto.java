@@ -5,42 +5,69 @@ public class AnalizadorDeTexto {
     public static Scanner leer =  new Scanner(System.in);
     public static void main(String[] args) {
         
-        mostrarMenuYElegir();
+        //iniciarAplicacion();
         
     }
 
-    public static void mostrarMenuYElegir() {
-
-    int eleccion;        
+    static void iniciarAplicacion() {
+        int eleccion;
 
         do {
-            System.out.println("=== ANALIZADOR DE TEXTO ==="); 
-            System.out.println("1. Contar vocales");
-            System.out.println("2. Contar palabras");
-            System.out.println("3. Palabra más larga");
-            System.out.println("Saliendo del programa...");
-
-            eleccion = leer.nextInt();
-
+            eleccion = mostrarMenuYLeerOpcion();
+            
             switch (eleccion) {
                 case 1:
-                    contarVocales();
+                    contarVocalesUI();
                     break;
+
                 case 2:
-                    contarPalabras();
+                    contarPalabrasUI();
                     break;
+
                 case 3:
-                    palabraMasLarga();
+                    palabraMasLargaUI();
                     break;
+
                 case 0:
-                    salirPrograma();
+                    System.out.println("Saliendo de la agenda...");
                     break;
+                default:
+                    System.out.println("Opción no válida.");
             }
 
-        } while (eleccion <= 3 && eleccion >= 0);
-        
+            System.out.println("\nPulsa ENTER para continuar...");
+            leer.nextLine();
+
+        } while (eleccion != 0);
+    }
+
+    static int mostrarMenuYLeerOpcion() {
+
+        System.out.println("\n=== ANALIZADOR DE TEXTO ===");
+        System.out.println("1. Contar vocales");
+        System.out.println("2. Contar palabras");
+        System.out.println("3. Palabra más larga");
+        System.out.println("0. Salir del programa");
+        System.out.print("Elige una opción: ");
+
+        int opcion = leer.nextInt();
+        leer.nextLine(); // limpiar buffer
+        return opcion;
+    }      
+
+
+    public static void contarVocalesUI(){
+
+    }
+
+    public static void contarPalabrasUI(){
         
     }
+
+    public static void palabraMasLargaUI(){
+        
+    }
+
 
     public static void contarVocales(){
 
@@ -54,9 +81,6 @@ public class AnalizadorDeTexto {
         
     }
 
-    public static void salirPrograma(){
-        System.out.println("Has salido del programa.");
-    }
 
 
 }
