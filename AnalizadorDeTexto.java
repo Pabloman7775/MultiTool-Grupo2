@@ -4,7 +4,7 @@ public class AnalizadorDeTexto {
 
     public static Scanner leer =  new Scanner(System.in);
     public static void main(String[] args) {
-        
+
         //iniciarAplicacion();
         
     }
@@ -29,7 +29,7 @@ public class AnalizadorDeTexto {
                     break;
 
                 case 0:
-                    System.out.println("Saliendo de la agenda...");
+                    System.out.println("Has salido del programa.");
                     break;
                 default:
                     System.out.println("Opción no válida.");
@@ -68,9 +68,18 @@ public class AnalizadorDeTexto {
         
     }
 
+    public static int contarVocales(String texto){
 
-    public static void contarVocales(){
+        texto = texto.toLowerCase();
+        int contadorVocales = 0;
 
+        for (int i = 0; i < texto.length()-1; i++) {
+            if (texto.charAt(i) == 'a' || texto.charAt(i) == 'e' || texto.charAt(i) == 'i' || texto.charAt(i) == 'o' || texto.charAt(i) == 'u') {
+                contadorVocales++;
+            }
+        }
+
+        return contadorVocales;
     }
 
     public static void contarPalabras(){
