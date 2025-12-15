@@ -7,11 +7,13 @@ public class AnalizadorDeTexto {
 
         //iniciarAplicacion();
 
-        String texto = "Mi bomwegbo a clat";
+        String texto = "Manolito toca la guitarra muy bien.";
 
         System.out.println(contarVocales(texto));
         System.out.println(contarPalabras(texto));
         System.out.println(palabraMasLarga(texto));
+
+        contarVocalesUI();
         
     }
 
@@ -68,7 +70,7 @@ public class AnalizadorDeTexto {
 
 
     public static void contarVocalesUI() {
-
+        System.out.println("El texto introducido contiene un total de " + contarVocales(leerYComprobarTexto()) + "vocales.");
     }
 
 
@@ -83,6 +85,31 @@ public class AnalizadorDeTexto {
         
     }
 
+
+    public static String leerYComprobarTexto() {
+
+        String texto = "";
+
+        boolean textoValido = false;
+        
+        do {
+            System.out.print("Introduce un texto válido: ");
+            texto = leer.nextLine();
+
+            if (!(texto == null || texto.isEmpty())) {
+                textoValido = true;
+                
+            } else if (texto == null || texto.isEmpty()) {
+                System.out.println("El texto introducido es incorrecto.");
+                System.out.println("");
+                textoValido = false;
+            }
+
+        } while (textoValido == false);
+
+
+        return texto;
+    }
 
 
     public static int contarVocales(String texto) {
