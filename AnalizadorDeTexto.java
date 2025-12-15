@@ -5,21 +5,13 @@ public class AnalizadorDeTexto {
     public static Scanner leer =  new Scanner(System.in);
     public static void main(String[] args) {
 
-        //iniciarAplicacion();
+        iniciarAplicacion();
 
-        String texto = "Manolito toca la guitarra muy bien.";
-
-        System.out.println(contarVocales(texto));
-        System.out.println(contarPalabras(texto));
-        System.out.println(palabraMasLarga(texto));
-
-        contarVocalesUI();
-        
     }
 
 
 
-    static void iniciarAplicacion() {
+    public static void iniciarAplicacion() {
         int eleccion;
 
         do {
@@ -41,6 +33,7 @@ public class AnalizadorDeTexto {
                 case 0:
                     System.out.println("Has salido del programa.");
                     break;
+
                 default:
                     System.out.println("Opción no válida.");
             }
@@ -53,7 +46,7 @@ public class AnalizadorDeTexto {
 
 
 
-    static int mostrarMenuYLeerOpcion() {
+    public static int mostrarMenuYLeerOpcion() {
 
         System.out.println("\n=== ANALIZADOR DE TEXTO ===");
         System.out.println("1. Contar vocales");
@@ -65,24 +58,24 @@ public class AnalizadorDeTexto {
         int opcion = leer.nextInt();
         leer.nextLine(); // limpiar buffer
         return opcion;
-    }      
-
+    }
 
 
     public static void contarVocalesUI() {
-        System.out.println("El texto introducido contiene un total de " + contarVocales(leerYComprobarTexto()) + "vocales.");
+        System.out.println("");
+        System.out.println("El texto introducido contiene un total de " + contarVocales(leerYComprobarTexto()) + " vocales.");
     }
-
 
 
     public static void contarPalabrasUI() {
-        
+        System.out.println("");
+        System.out.println("El texto contiene un total de " + contarPalabras(leerYComprobarTexto()) + " palabras.");
     }
 
 
-
     public static void palabraMasLargaUI() {
-        
+        System.out.println("");
+        System.out.println("La palabra más larga del texto es '" + palabraMasLarga(leerYComprobarTexto()) + "'.");
     }
 
 
@@ -127,7 +120,6 @@ public class AnalizadorDeTexto {
     }
 
 
-
     public static int contarPalabras(String texto) {
 
         if (texto == null || texto.length() == 0) {
@@ -151,7 +143,6 @@ public class AnalizadorDeTexto {
 
         return conteoPalabras;
     }
-
 
 
     public static String palabraMasLarga(String texto) {
@@ -183,9 +174,5 @@ public class AnalizadorDeTexto {
 
         return palabraMasLarga;
     }
-
-
-
-
 
 }
