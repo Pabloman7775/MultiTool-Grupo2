@@ -7,9 +7,11 @@ public class AnalizadorDeTexto {
 
         //iniciarAplicacion();
 
-        String texto = "Mi bombo clat";
+        String texto = "Mi bomwegbo a clat";
 
-        palabraMasLarga(texto);
+        System.out.println(contarVocales(texto));
+        System.out.println(contarPalabras(texto));
+        System.out.println(palabraMasLarga(texto));
         
     }
 
@@ -129,7 +131,7 @@ public class AnalizadorDeTexto {
 
         if (texto == null || texto.length() == 0) {
             return "";
-        }  
+        }
 
         String palabraActual = "";
         String palabraMasLarga = "";
@@ -139,12 +141,20 @@ public class AnalizadorDeTexto {
 
             if (caracterActual != ' ') {
                 palabraActual += caracterActual;
-            } else if (palabraActual.length() > palabraMasLarga.length()) {
-                palabraMasLarga = palabraActual;
+            } else {
+                if (palabraActual.length() > palabraMasLarga.length()) {
+                    palabraMasLarga = palabraActual;
+                }
+                palabraActual = ""; // solo aquí
             }
         }
-    
-    
+
+        // Comparar la última palabra (por si el texto no termina en espacio)
+        if (palabraActual.length() > palabraMasLarga.length()) {
+            palabraMasLarga = palabraActual;
+        }
+
+        return palabraMasLarga;
     }
 
 
