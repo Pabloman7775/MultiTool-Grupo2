@@ -46,8 +46,6 @@ public class gestorTareas {
             case 3:
                 pedirPalabra();
                 break;
-            case 0:
-                break;
             default:
                 System.out.println();
                 System.out.println("Introduce una opción válida.");
@@ -63,7 +61,7 @@ public class gestorTareas {
         System.out.print("Introduce Tarea: ");
         String tarea = leer.next();
         for (int i = 0; i < contador; i++) {
-            if (tarea.equals(tareas[i])) {
+            if (tarea.toLowerCase().equals(tareas[i])) {
                 System.out.println();
                 System.out.println("Esta tarea ya existe en la posición " + i);
                 System.out.println();
@@ -73,7 +71,8 @@ public class gestorTareas {
         if (existe == false) {
             tareas[contador] = tarea;
             contador++;
-            System.out.println("Tarea correctamente creada");
+            System.out.println();
+            System.out.println("Tarea '" +  tarea + "'correctamente creada");
         } {
             
         }
@@ -119,6 +118,5 @@ public class gestorTareas {
         else {
             System.out.println("Se han encontrado " + encontradas + " palabras relacionadas a '" + palabra + "'");
         }
-        opcionMenu();
     }
 }
