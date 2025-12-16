@@ -5,14 +5,15 @@ public class AnalizadorDeTexto {
     public static Scanner leer =  new Scanner(System.in);
     public static void main(String[] args) {
 
-        iniciarAplicacion();
+        iniciarAnalizadorDeTexto();
 
     }
-//manolito
 
+
+    
 // Inicio de aplicación (Main)
 
-    public static void iniciarAplicacion() {
+    public static void iniciarAnalizadorDeTexto() {
         int eleccion;
 
         do {
