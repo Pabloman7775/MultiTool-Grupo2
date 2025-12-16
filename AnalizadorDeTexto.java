@@ -31,7 +31,7 @@ public class AnalizadorDeTexto {
                     break;
 
                 case 0:
-                    System.out.println("Has salido del programa.");
+                    System.out.println("\nHas salido del programa.");
                     break;
 
                 default:
@@ -62,19 +62,19 @@ public class AnalizadorDeTexto {
 
 
     public static void contarVocalesUI() {
-        System.out.println("");
+        System.out.println("\n=== CONTAR VOCALES ===");
         System.out.println("El texto introducido contiene un total de " + contarVocales(leerYComprobarTexto()) + " vocales.");
     }
 
 
     public static void contarPalabrasUI() {
-        System.out.println("");
+        System.out.println("\n=== CONTAR PALABAS ===");
         System.out.println("El texto contiene un total de " + contarPalabras(leerYComprobarTexto()) + " palabras.");
     }
 
 
     public static void palabraMasLargaUI() {
-        System.out.println("");
+        System.out.println("\n=== PALABRA MAS LARGA ===");
         System.out.println("La palabra más larga del texto es '" + palabraMasLarga(leerYComprobarTexto()) + "'.");
     }
 
@@ -110,7 +110,7 @@ public class AnalizadorDeTexto {
         texto = texto.toLowerCase();
         int contadorVocales = 0;
 
-        for (int i = 0; i < texto.length()-1; i++) {
+        for (int i = 0; i < texto.length(); i++) {
             if (texto.charAt(i) == 'a' || texto.charAt(i) == 'e' || texto.charAt(i) == 'i' || texto.charAt(i) == 'o' || texto.charAt(i) == 'u') {
                 contadorVocales++;
             }
