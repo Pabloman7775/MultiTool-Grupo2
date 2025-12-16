@@ -9,7 +9,8 @@ public class AnalizadorDeTexto {
 
     }
 
-    
+
+// Inicio de aplicación (Main)
 
     public static void iniciarAplicacion() {
         int eleccion;
@@ -44,6 +45,8 @@ public class AnalizadorDeTexto {
         } while (eleccion != 0);
     }
 
+
+// Menú y validación de entradas
 
     public static int mostrarMenuYLeerOpcion() {
 
@@ -80,24 +83,6 @@ public class AnalizadorDeTexto {
     }
 
 
-    public static void contarVocalesUI() {
-        System.out.println("\n=== CONTAR VOCALES ===");
-        System.out.println("El texto introducido contiene un total de " + contarVocales(leerYComprobarTexto()) + " vocales.");
-    }
-
-
-    public static void contarPalabrasUI() {
-        System.out.println("\n=== CONTAR PALABAS ===");
-        System.out.println("El texto contiene un total de " + contarPalabras(leerYComprobarTexto()) + " palabras.");
-    }
-
-
-    public static void palabraMasLargaUI() {
-        System.out.println("\n=== PALABRA MAS LARGA ===");
-        System.out.println("La palabra más larga del texto es '" + palabraMasLarga(leerYComprobarTexto()) + "'.");
-    }
-
-
     public static String leerYComprobarTexto() {
 
         String texto = "";
@@ -113,7 +98,9 @@ public class AnalizadorDeTexto {
                 
             } else if (texto == null || texto.isEmpty()) {
                 System.out.println("El texto introducido es incorrecto.");
-                System.out.println("");
+                
+                System.out.println("\nPulsa ENTER para continuar...");
+                leer.nextLine();
                 textoValido = false;
             }
 
@@ -123,6 +110,28 @@ public class AnalizadorDeTexto {
         return texto;
     }
 
+
+// Métodos interfaz del usuario
+
+    public static void palabraMasLargaUI() {
+        System.out.println("\n=== PALABRA MAS LARGA ===");
+        System.out.println("La palabra más larga del texto es '" + palabraMasLarga(leerYComprobarTexto()) + "'.");
+    }
+
+
+    public static void contarVocalesUI() {
+        System.out.println("\n=== CONTAR VOCALES ===");
+        System.out.println("El texto introducido contiene un total de " + contarVocales(leerYComprobarTexto()) + " vocales.");
+    }
+
+
+    public static void contarPalabrasUI() {
+        System.out.println("\n=== CONTAR PALABAS ===");
+        System.out.println("El texto contiene un total de " + contarPalabras(leerYComprobarTexto()) + " palabras.");
+    }
+
+
+// Métodos logicos
 
     public static int contarVocales(String texto) {
 
