@@ -2,12 +2,16 @@ import java.util.Scanner;
 
 public class adivina_el_numero {
 
-    public static void adivina_el_numero_submenu() {
+    public static void main(String[] args) {
+        adivina_el_numero_submenu();
+    }
 
+    public static void adivina_el_numero_submenu() {
+        System.out.println("===========================\n     ADIVINA EL NÚMERO\n===========================\n1. Explicación del juego\n2. Jugar\n3. Mostrar intentos del último juego");
     }
 
     public static void adivina_el_numero_explicación() {
-
+        //TODO
     }
 
     public static void adivina_el_numero_jugar() {
@@ -20,7 +24,7 @@ public class adivina_el_numero {
         do {
             adivina = leer.nextInt();
             if (adivina_el_numero_adivinado(adivina, aleatorio)) {
-                System.out.println("Correcto! El número era " + adivina_el_numero_generar_aleatorio() + ".");
+                System.out.println("Correcto! El número era " + aleatorio + ".");
                 break;
             } else {
                 System.out.println("Incorrecto, pruebe otra vez: ");
@@ -51,6 +55,6 @@ public class adivina_el_numero {
     }
 
     public static void adivina_el_numero_salir() {
-
+        //TODO
     }
 }
