@@ -13,19 +13,22 @@ public class adivina_el_numero {
     public static void adivina_el_numero_jugar() {
         Scanner leer = new Scanner(System.in);
         System.out.print("Adivine el número entre 1 y 50: ");
-        int adivina;
+        int adivina, intentos;
 
-        adivina_el_numero_generar_aleatorio();
+        int aleatorio = adivina_el_numero_generar_aleatorio();
 
         do {
             adivina = leer.nextInt();
-            if (adivina_el_numero_adivinado(adivina)) {
+            if (adivina_el_numero_adivinado(adivina, aleatorio)) {
                 System.out.println("Correcto! El número era " + adivina_el_numero_generar_aleatorio() + ".");
                 break;
             } else {
                 System.out.println("Incorrecto, pruebe otra vez: ");
             }
-        } while (adivina_el_numero_adivinado(adivina) == false);
+            intentos++;
+        } while (adivina_el_numero_adivinado(adivina, aleatorio) == false);
+
+        adivina_el_numero_intentos(intentos);
 
         leer.close();
     }
@@ -35,11 +38,11 @@ public class adivina_el_numero {
         return aleatorio;
     }
 
-    public static boolean adivina_el_numero_adivinado() {
+    public static boolean adivina_el_numero_adivinado(int adivina, int aleatorio) {
         boolean adivinado = false;
-
-
-
+        if (adivina == aleatorio) {
+            adivinado = true;
+        }
         return adivinado;
     }
 
