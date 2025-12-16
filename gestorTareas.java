@@ -56,27 +56,30 @@ public class gestorTareas {
     
     static void añadirTarea() {
         boolean existe = false;
-        System.out.println();
-        System.out.println("=== AÑADIR TAREA ===");
-        System.out.print("Introduce Tarea: ");
-        String tarea = leer.next();
-        for (int i = 0; i < contador; i++) {
-            if (tarea.toLowerCase().equals(tareas[i])) {
+        if (contador == 15) {
+            System.out.println();
+            System.out.println("No te queda espacio para crear tareas nuevas.");
+        }
+        else {
+            System.out.println();
+            System.out.println("=== AÑADIR TAREA ===");
+            System.out.print("Introduce Tarea: ");
+            String tarea = leer.next();
+            for (int i = 0; i < contador; i++) {
+                if (tarea.toLowerCase().equals(tareas[i])) {
+                    System.out.println();
+                    System.out.println("Esta tarea ya existe en la posición " + i);
+                    System.out.println();
+                    existe = true;
+                }
+            }
+            if (existe == false) {
+                tareas[contador] = tarea;
+                contador++;
                 System.out.println();
-                System.out.println("Esta tarea ya existe en la posición " + i);
-                System.out.println();
-                existe = true;
+                System.out.println("Tarea '" +  tarea + "'correctamente creada");
             }
         }
-        if (existe == false) {
-            tareas[contador] = tarea;
-            contador++;
-            System.out.println();
-            System.out.println("Tarea '" +  tarea + "'correctamente creada");
-        } {
-            
-        }
-        
     }
 
     static void listarTareas() {
