@@ -13,7 +13,7 @@ public class adivina_el_numero {
     public static void adivina_el_numero_jugar() {
         Scanner leer = new Scanner(System.in);
         System.out.print("Adivine el número entre 1 y 50: ");
-        int adivina, intentos;
+        int adivina, intentos = 0;
 
         int aleatorio = adivina_el_numero_generar_aleatorio();
 
@@ -46,8 +46,8 @@ public class adivina_el_numero {
         return adivinado;
     }
 
-    public static void adivina_el_numero_intentos() {
-
+    public static int adivina_el_numero_intentos(int intentos) {
+        return intentos;
     }
 
     public static void adivina_el_numero_salir() {
