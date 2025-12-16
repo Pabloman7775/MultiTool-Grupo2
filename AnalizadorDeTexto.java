@@ -9,7 +9,7 @@ public class AnalizadorDeTexto {
 
     }
 
-
+    
 
     public static void iniciarAplicacion() {
         int eleccion;
@@ -45,19 +45,38 @@ public class AnalizadorDeTexto {
     }
 
 
-
     public static int mostrarMenuYLeerOpcion() {
 
-        System.out.println("\n=== ANALIZADOR DE TEXTO ===");
-        System.out.println("1. Contar vocales");
-        System.out.println("2. Contar palabras");
-        System.out.println("3. Palabra más larga");
-        System.out.println("0. Salir del programa");
-        System.out.print("Elige una opción: ");
+        boolean entradaValida = false;
 
-        int opcion = leer.nextInt();
-        leer.nextLine(); // limpiar buffer
-        return opcion;
+        String opcion;
+
+        do {
+
+            System.out.println("\n=== ANALIZADOR DE TEXTO ===");
+            System.out.println("1. Contar vocales");
+            System.out.println("2. Contar palabras");
+            System.out.println("3. Palabra más larga");
+            System.out.println("0. Salir del programa");
+            System.out.print("\nElige una opción: ");
+
+            opcion = leer.nextLine();
+            if (opcion.equals("0") || opcion.equals("1") || opcion.equals("2")|| opcion.equals("3")) {
+                entradaValida = true;
+            } else {
+                System.out.println("\nEntrada no válida. Introduce un valor compatible:");
+                
+                System.out.println("\nPulsa ENTER para continuar...");
+                leer.nextLine();
+
+                entradaValida = false;
+            }
+        } while (entradaValida == false);
+
+        // Conversión de String a int
+        int opcionInt = Integer.parseInt(opcion);
+
+        return opcionInt;
     }
 
 
@@ -86,7 +105,7 @@ public class AnalizadorDeTexto {
         boolean textoValido = false;
         
         do {
-            System.out.print("Introduce un texto válido: ");
+            System.out.print("Introduce un texto: ");
             texto = leer.nextLine();
 
             if (!(texto == null || texto.isEmpty())) {
