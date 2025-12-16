@@ -5,7 +5,7 @@ public class gestorTareas {
     static String[] tareas = new String[MAX_TAREAS];
     static Scanner leer = new Scanner(System.in);
     static int contador = 0;
-    public static void main(String[] args) {
+    public static void iniciarGestorTareas(String[] args) {
         int opcion = 0;
         do {
         opcion = opcionMenu();
