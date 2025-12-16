@@ -8,7 +8,7 @@ public class AnalizadorDeTexto {
         iniciarAplicacion();
 
     }
-
+//manolito
 
 // Inicio de aplicación (Main)
 
@@ -98,7 +98,7 @@ public class AnalizadorDeTexto {
                 
             } else if (texto == null || texto.isEmpty()) {
                 System.out.println("El texto introducido es incorrecto.");
-                
+
                 System.out.println("\nPulsa ENTER para continuar...");
                 leer.nextLine();
                 textoValido = false;
