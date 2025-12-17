@@ -7,12 +7,39 @@ public class adivina_el_numero {
     }
 
     public static void adivina_el_numero_submenu() {
-        System.out.println("===========================\n     ADIVINA EL NÚMERO\n===========================\n1. Explicación del juego\n2. Jugar\n3. Mostrar intentos del último juego");
+        System.out.println("===========================\n     ADIVINA EL NÚMERO\n===========================\nPara seleccionar una opción introduzca el número correspondiente el número correspondiente:\n1. Explicación del juego\n2. Jugar\n3. Mostrar intentos del último juego");
+        Scanner leer = new Scanner(System.in);
+        System.out.print("Seleccione opción: ");
+        adivina_el_numero_seleccionar(leer.nextInt());
+        leer.close();
+    }
+
+    public static void adivina_el_numero_seleccionar(int opcion) {
+        switch (opcion) {
+            case 1:
+                adivina_el_numero_explicación();
+                break;
+
+            case 2:
+                adivina_el_numero_jugar();
+                break;
+
+            case 3:
+                adivina_el_numero_intentos();
+                break;
+
+            default:
+                System.out.println("Error: esa opción no existe");
+                break;
+        }
     }
 
     public static void adivina_el_numero_explicación() {
         //TODO
     }
+
+    //Variable para almacenar el número de intentos.
+    static int adivina_el_numero_intentos_anterior = 0;
 
     public static void adivina_el_numero_jugar() {
         Scanner leer = new Scanner(System.in);
@@ -32,7 +59,7 @@ public class adivina_el_numero {
             intentos++;
         } while (adivina_el_numero_adivinado(adivina, aleatorio) == false);
 
-        adivina_el_numero_intentos(intentos);
+        adivina_el_numero_intentos_anterior = intentos;
 
         leer.close();
     }
@@ -50,8 +77,12 @@ public class adivina_el_numero {
         return adivinado;
     }
 
-    public static int adivina_el_numero_intentos(int intentos) {
-        return intentos;
+    public static void adivina_el_numero_intentos() {
+        if (adivina_el_numero_intentos_anterior != 0) {
+            System.out.println("Número de intentos del último juego: " + adivina_el_numero_intentos_anterior);
+        } else {
+            System.out.println("Error: todavía no se ha jugado");
+        }
     }
 
     public static void adivina_el_numero_salir() {
