@@ -20,7 +20,7 @@ public class PRINCIPAL {
         System.out.println("0: SALIR");
         System.out.println("=====================================");
 
-        switch (numScanner.nextInt()) {
+        switch (numero()) {
             case 1:
                 System.out.println();
                 System.out.println();
@@ -60,6 +60,25 @@ public class PRINCIPAL {
 
         }
     }
+//====================================================================
+//                      COMPROVAR NUMERO
+//====================================================================
+
+   public static int numero() {
+    Scanner sc = new Scanner(System.in);
+    int numero = 10;
+    String a;
+        a = sc.next();
+        if (a.equals("1") || a.equals("2") || a.equals("3") || a.equals("4") || a.equals("0")) {
+            numero = Integer.parseInt(a);
+        }
+
+    return numero;
+    }
+//====================================================================
+
+
+
 
 
 //====================================================================
