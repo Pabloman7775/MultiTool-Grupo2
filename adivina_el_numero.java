@@ -9,7 +9,7 @@ public class adivina_el_numero {
     public static void adivina_el_numero_submenu() {
         System.out.println("===========================\n     ADIVINA EL NÚMERO\n===========================\nPara seleccionar una opción introduzca el número correspondiente el número correspondiente:\n1. Explicación del juego\n2. Jugar\n3. Mostrar intentos del último juego");
         Scanner leer = new Scanner(System.in);
-        System.out.print("Seleccione opción: ");
+        System.out.print("\nSeleccione opción: ");
         adivina_el_numero_seleccionar(leer.nextInt());
         leer.close();
     }
@@ -35,7 +35,7 @@ public class adivina_el_numero {
     }
 
     public static void adivina_el_numero_explicación() {
-        //TODO
+        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------\nReglas:\nLa máquina generará un número aleatorios del 1 al 50 y el usuario deberá tratar de adivinarlo probando diferentes números en la terminal.\n------------------------------------------------------------------------------------------------------------------------------------------\nCómo jugar:\nEl juego no terminará hasta que el usuario decida salir o haya acertado el número.\nSi se cumple este último caso, se notificará al usuario mediante un mensaje y se volverá al menú de la utilidad.\n------------------------------------------------------------------------------------------------------------------------------------------");
     }
 
     //Variable para almacenar el número de intentos.
