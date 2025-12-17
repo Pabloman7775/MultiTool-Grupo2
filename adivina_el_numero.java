@@ -86,6 +86,6 @@ public class adivina_el_numero {
     }
 
     public static void adivina_el_numero_salir() {
-        //TODO
+        main(null);
     }
 }
