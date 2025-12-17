@@ -40,7 +40,7 @@ public class adivina_el_numero {
     }
 
     public static void adivina_el_numero_explicación() {
-        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------\nReglas:\nLa máquina generará un número aleatorios del 1 al 50 y el usuario deberá tratar de adivinarlo probando diferentes números en la terminal.\n------------------------------------------------------------------------------------------------------------------------------------------\nCómo jugar:\nEl juego no terminará hasta que el usuario decida salir o haya acertado el número.\nSi se cumple este último caso, se notificará al usuario mediante un mensaje y se volverá al menú de la utilidad.\n------------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------\nReglas:\nLa máquina generará un número aleatorios del 1 al 50 y el usuario deberá tratar de adivinarlo probando diferentes números en la terminal.\n------------------------------------------------------------------------------------------------------------------------------------------\nCómo jugar:\nEl juego no terminará hasta que el usuario decida salir o haya acertado el número.\nSi se cumple este último caso, se notificará al usuario mediante un mensaje y se volverá al menú de la utilidad.\nPara salir el usuario deberá escribir \"-1\".\n------------------------------------------------------------------------------------------------------------------------------------------");
         adivina_el_numero_submenu();
     }
 
@@ -59,6 +59,10 @@ public class adivina_el_numero {
             if (adivina_el_numero_adivinado(adivina, aleatorio)) {
                 System.out.println("Correcto! El número era " + aleatorio + ".");
                 intentos++;
+                break;
+            } else if (adivina == -1) {
+                System.out.println("El usuario ha elgido salir\nSe reiniciará el número de intentos");
+                intentos = 0;
                 break;
             } else {
                 System.out.println("Incorrecto, pruebe otra vez: ");
